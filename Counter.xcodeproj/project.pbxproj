@@ -16,6 +16,7 @@
 		E500C9AE264C4A1A005677FA /* CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500C9AD264C4A1A005677FA /* CounterTests.swift */; };
 		E500C9B9264C4A1A005677FA /* CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500C9B8264C4A1A005677FA /* CounterUITests.swift */; };
 		E500C9C7264C4B56005677FA /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500C9C6264C4B56005677FA /* CounterModel.swift */; };
+		E500C9CC264C5E9A005677FA /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500C9CB264C5E9A005677FA /* CounterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E500C9B8264C4A1A005677FA /* CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterUITests.swift; sourceTree = "<group>"; };
 		E500C9BA264C4A1A005677FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E500C9C6264C4B56005677FA /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
+		E500C9CB264C5E9A005677FA /* CounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				E500C9C8264C4BB7005677FA /* Supporting Files */,
 				E500C9C6264C4B56005677FA /* CounterModel.swift */,
+				E500C9CB264C5E9A005677FA /* CounterTableViewCell.swift */,
 				E500C99A264C4A1A005677FA /* ViewController.swift */,
 				E500C99C264C4A1A005677FA /* Main.storyboard */,
 				E500C99F264C4A1A005677FA /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 			files = (
 				E500C99B264C4A1A005677FA /* ViewController.swift in Sources */,
 				E500C997264C4A1A005677FA /* AppDelegate.swift in Sources */,
+				E500C9CC264C5E9A005677FA /* CounterTableViewCell.swift in Sources */,
 				E500C9C7264C4B56005677FA /* CounterModel.swift in Sources */,
 				E500C999264C4A1A005677FA /* SceneDelegate.swift in Sources */,
 			);

@@ -15,7 +15,7 @@ struct Counter: Codable {
 }
 
 // MARK: - Model Manager
-class counterManager: NSObject, Codable {
+class CounterManager: NSObject, Codable {
     
     //list of different counters
     public var listOfCounters = [Counter]()
@@ -27,7 +27,7 @@ class counterManager: NSObject, Codable {
     
     // MARK: - Initializators
     init?(json: Data) {
-        if let newValue = try? JSONDecoder().decode(counterManager.self, from: json) {
+        if let newValue = try? JSONDecoder().decode(CounterManager.self, from: json) {
             self.listOfCounters = newValue.listOfCounters
         } else {
             return nil
