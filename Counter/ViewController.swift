@@ -41,6 +41,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    	
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "ShowCounter", sender: self)
+        
+    }
+    
+    //MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CounterVC {
+            destination.currentCounter = list.listOfCounters[(counterTableView.indexPathForSelectedRow?.row)!]
+            counterTableView.deselectRow(at: counterTableView.indexPathForSelectedRow!, animated: true)
+        }
+    }
     
 
 }

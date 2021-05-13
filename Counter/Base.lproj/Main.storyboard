@@ -34,14 +34,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CounterCell" id="0JB-7C-Jcb" customClass="CounterTableViewCell" customModule="Counter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0JB-7C-Jcb" id="KEG-nM-ks7">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0l-tW-GmJ">
-                                                    <rect key="frame" x="30" y="11" width="61.5" height="21"/>
+                                                    <rect key="frame" x="30" y="11" width="61.5" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="wjX-r0-3cj"/>
                                                     </constraints>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY5-nY-Dfc">
-                                                    <rect key="frame" x="354" y="11" width="30" height="21"/>
+                                                    <rect key="frame" x="354" y="11" width="30" height="21.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="cwv-xt-9UC"/>
                                                     </constraints>
@@ -92,11 +92,57 @@
                     <navigationItem key="navigationItem" title="Что будем считать?" id="tXO-FS-qXV"/>
                     <connections>
                         <outlet property="counterTableView" destination="WIg-l9-1Fn" id="mxk-06-fTO"/>
+                        <segue destination="ch3-EA-3Me" kind="show" identifier="ShowCounter" id="3FS-5u-7O2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="83.705357142857139"/>
+        </scene>
+        <!--CounterVC-->
+        <scene sceneID="xfy-ly-zRF">
+            <objects>
+                <viewController storyboardIdentifier="CounterVCID" id="ch3-EA-3Me" customClass="CounterVC" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZmT-Jl-TZP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-QT-13Z">
+                                <rect key="frame" x="10" y="88" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Srd-gg-O5P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alh-VJ-VRL">
+                                <rect key="frame" x="168" y="419" width="84" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="50"/>
+                                <state key="normal" title="100"/>
+                                <connections>
+                                    <action selector="incrementValue:" destination="ch3-EA-3Me" eventType="touchUpInside" id="jgr-4y-A8i"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dVa-5G-lsr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dVa-5G-lsr" firstAttribute="trailing" secondItem="mJ6-QT-13Z" secondAttribute="trailing" constant="10" id="DLD-DY-LuT"/>
+                            <constraint firstItem="mJ6-QT-13Z" firstAttribute="top" secondItem="dVa-5G-lsr" secondAttribute="top" id="b2x-sl-9jO"/>
+                            <constraint firstItem="mJ6-QT-13Z" firstAttribute="leading" secondItem="dVa-5G-lsr" secondAttribute="leading" constant="10" id="mBG-9E-wL7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0l5-W3-rcw"/>
+                    <connections>
+                        <outlet property="counterDescription" destination="mJ6-QT-13Z" id="d5r-ao-FkO"/>
+                        <outlet property="valueCounter" destination="Alh-VJ-VRL" id="aJ7-qz-JbM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lqj-5H-bkY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1835" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ep3-E6-6D7">
