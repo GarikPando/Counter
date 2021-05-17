@@ -7,8 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol CounterProtocol {
+    func onIncrement(counter item: Int)
+}
 
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CounterProtocol {
+    
     //MARK: - Model
     var list = CounterManager()
     
@@ -51,9 +55,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CounterVC {
-            destination.currentCounter = list.listOfCounters[(counterTableView.indexPathForSelectedRow?.row)!]
-            counterTableView.deselectRow(at: counterTableView.indexPathForSelectedRow!, animated: true)
+            destination.delegate = self
+            if let itemIndex = counterTableView.indexPathForSelectedRow?.row {
+                destination.counterItem = itemIndex
+                destination.currentCounter = list.listOfCounters[itemIndex]
+                counterTableView.deselectRow(at: counterTableView.indexPathForSelectedRow!, animated: true)
+            }
         }
+    }
+    
+    //MARK: - Update counters in tableview
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        counterTableView.beginUpdates()
+        counterTableView.reloadData()
+        counterTableView.endUpdates()
+    }
+    
+    //MARK: - Change model
+    func onIncrement(counter item: Int) {
+        list.listOfCounters[item].valueCounter += 1
     }
     
 

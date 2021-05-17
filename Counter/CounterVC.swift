@@ -9,6 +9,7 @@ import UIKit
 
 class CounterVC: UIViewController {
 
+    //MARK: - Outlets and Actions
     @IBOutlet weak var counterDescription: UILabel!
     
     @IBOutlet weak var valueCounter: UIButton!
@@ -17,14 +18,20 @@ class CounterVC: UIViewController {
         if let _ = currentCounter {
             currentCounter!.valueCounter += 1
             valueCounter.setTitle(String(currentCounter!.valueCounter), for: .normal)
+            if let item = counterItem {
+                delegate?.onIncrement(counter: item)
+            }
+            
         }
     }
     
+    //MARK: - Vars
     var currentCounter: Counter?
+    var delegate: CounterProtocol?
+    var counterItem: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         guard let counter = currentCounter else {
             return
         }
@@ -32,8 +39,9 @@ class CounterVC: UIViewController {
         valueCounter.setTitle(String(counter.valueCounter), for: .normal)
         
     }
-    
+}
 
-    
-
+extension CounterVC: CounterProtocol {
+    func onIncrement(counter item: Int) {
+    }
 }
