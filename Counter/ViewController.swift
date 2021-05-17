@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadModel()
         counterTableView.delegate = self
         counterTableView.dataSource = self
         
@@ -70,11 +70,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         counterTableView.beginUpdates()
         counterTableView.reloadData()
         counterTableView.endUpdates()
+        list.saveModel()
     }
     
     //MARK: - Change model
     func onIncrement(counter item: Int) {
         list.listOfCounters[item].valueCounter += 1
+    }
+    
+    //MARK: - Load model from JSON
+    func loadModel() {
+        if let documentURL = try? FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("counter.json") {
+            if let jsonData = try? Data(contentsOf: documentURL) {
+                list = CounterManager(json: jsonData) ?? CounterManager()
+            }
+        }
     }
     
 

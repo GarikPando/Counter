@@ -29,6 +29,7 @@ class CounterManager: NSObject, Codable {
     init?(json: Data) {
         if let newValue = try? JSONDecoder().decode(CounterManager.self, from: json) {
             self.listOfCounters = newValue.listOfCounters
+            print("Init by JSON")
         } else {
             return nil
         }
@@ -64,6 +65,16 @@ class CounterManager: NSObject, Codable {
     
     //MARK: - Save model by JSON
     public func saveModel() {
+        if let documentURL = try? FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("counter.json") {
+            if let jsonData = json {
+                do {
+                    try jsonData.write(to: documentURL)
+                } catch let error {
+                    print("The data coudn't save because of error \(error)")
+                }
+            }
+        }
+        
         print("save model")
     }
 }
