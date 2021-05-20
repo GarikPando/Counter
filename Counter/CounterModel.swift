@@ -10,14 +10,19 @@ import Foundation
 // MARK: - Model
 struct Counter: Codable {
     var nameCounter: String = ""
-    var valueCounter: Int32 = 0
-    var description: String
+    var valueCounter: Int32 = 0 {
+        didSet {
+            self.lastModification = Date()
+        }
+    }
+    var description: String = ""
+    var lastModification: Date? = nil
 }
 
 // MARK: - Model Manager
 class CounterManager: NSObject, Codable {
     
-    //list of different counters
+    //list of different counters∫
     public var listOfCounters = [Counter]()
     
     // lists in json

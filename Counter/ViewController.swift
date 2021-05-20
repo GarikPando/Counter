@@ -9,9 +9,12 @@ import UIKit
 
 protocol CounterProtocol {
     func onIncrement(counter item: Int)
+    func onDecrement(counter item: Int)
+    func onReset(counter item: Int)
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CounterProtocol {
+    
     
     //MARK: - Model
     var list = CounterManager()
@@ -38,11 +41,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  tableView.dequeueReusableCell(withIdentifier: "CounterCell", for: indexPath) as! CounterTableViewCell
-        
-        cell.nameCounter.text = list.listOfCounters[indexPath.row].nameCounter
-        cell.valueCounter.text = String(list.listOfCounters[indexPath.row].valueCounter)
-        
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "CounterCell", for: indexPath)
+        if let counterCell = cell as? CounterTableViewCell {
+            counterCell.nameCounter.text = list.listOfCounters[indexPath.row].nameCounter
+            counterCell.valueCounter.text = String(list.listOfCounters[indexPath.row].valueCounter)
+        }
         return cell
     }
     	
@@ -51,6 +54,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "ShowCounter", sender: self)
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            list.listOfCounters.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    	
+    
     
     //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,9 +85,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         list.saveModel()
     }
     
-    //MARK: - Change model
+    //MARK: - Change model by protocol
     func onIncrement(counter item: Int) {
         list.listOfCounters[item].valueCounter += 1
+    }
+    func onDecrement(counter item: Int) {
+        if list.listOfCounters[item].valueCounter > 0 {
+            list.listOfCounters[item].valueCounter -= 1
+        }
+    }
+    
+    func onReset(counter item: Int) {
+        list.listOfCounters[item].valueCounter = 0
     }
     
     //MARK: - Load model from JSON
