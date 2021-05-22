@@ -18,6 +18,7 @@
 		E500C9C7264C4B56005677FA /* CounterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500C9C6264C4B56005677FA /* CounterModel.swift */; };
 		E500C9CC264C5E9A005677FA /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E500C9CB264C5E9A005677FA /* CounterTableViewCell.swift */; };
 		E57087C3264DB44700A76DEB /* CounterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57087C2264DB44700A76DEB /* CounterVC.swift */; };
+		E5BAEAD7265919DA005A87FA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BAEAD6265919DA005A87FA /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E500C9C6264C4B56005677FA /* CounterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterModel.swift; sourceTree = "<group>"; };
 		E500C9CB264C5E9A005677FA /* CounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
 		E57087C2264DB44700A76DEB /* CounterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterVC.swift; sourceTree = "<group>"; };
+		E5BAEAD6265919DA005A87FA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E500C9C6264C4B56005677FA /* CounterModel.swift */,
 				E500C9CB264C5E9A005677FA /* CounterTableViewCell.swift */,
 				E57087C2264DB44700A76DEB /* CounterVC.swift */,
+				E5BAEAD6265919DA005A87FA /* GradientView.swift */,
 				E500C99A264C4A1A005677FA /* ViewController.swift */,
 				E500C99C264C4A1A005677FA /* Main.storyboard */,
 				E500C99F264C4A1A005677FA /* Assets.xcassets */,
@@ -279,6 +282,7 @@
 				E500C997264C4A1A005677FA /* AppDelegate.swift in Sources */,
 				E500C9CC264C5E9A005677FA /* CounterTableViewCell.swift in Sources */,
 				E500C9C7264C4B56005677FA /* CounterModel.swift in Sources */,
+				E5BAEAD7265919DA005A87FA /* GradientView.swift in Sources */,
 				E500C999264C4A1A005677FA /* SceneDelegate.swift in Sources */,
 				E57087C3264DB44700A76DEB /* CounterVC.swift in Sources */,
 			);
@@ -457,6 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TTA3Y2J29G;
 				INFOPLIST_FILE = Counter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,6 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TTA3Y2J29G;
 				INFOPLIST_FILE = Counter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

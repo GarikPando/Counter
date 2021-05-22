@@ -30,6 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         loadModel()
+        
         counterTableView.delegate = self
         counterTableView.dataSource = self
         
@@ -107,7 +108,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
-    
-
 }
 

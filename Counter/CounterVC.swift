@@ -29,12 +29,14 @@ class CounterVC: UIViewController {
     
     @IBAction func decrementCounter(_ sender: UIButton) {
         if var curCounter = currentCounter {
-            curCounter.valueCounter -= 1
-            valueCounter.setTitle(String(curCounter.valueCounter), for: .normal)
-            if let item = counterItem {
-                delegate?.onDecrement(counter: item)
+            if curCounter.valueCounter > 0 {
+                curCounter.valueCounter -= 1
+                valueCounter.setTitle(String(curCounter.valueCounter), for: .normal)
+                if let item = counterItem {
+                    delegate?.onDecrement(counter: item)
+                }
+                currentCounter = curCounter
             }
-            currentCounter = curCounter
         }
     }
     
@@ -68,7 +70,7 @@ class CounterVC: UIViewController {
       
         if let lastDate = counter.lastModification {
             lastModifyDateLabel.text = "Дата модификации: " + formatter.string(from: lastDate)
-    }
+        }
     }
 }
 

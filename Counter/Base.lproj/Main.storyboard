@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="Counter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -29,7 +29,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WIg-l9-1Fn">
+                            <tableView clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WIg-l9-1Fn">
                                 <rect key="frame" x="0.0" y="88" width="428" height="755"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -104,18 +104,15 @@
         <scene sceneID="xfy-ly-zRF">
             <objects>
                 <viewController storyboardIdentifier="CounterVCID" id="ch3-EA-3Me" customClass="CounterVC" customModule="Counter" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZmT-Jl-TZP">
+                    <view key="view" contentMode="scaleToFill" id="ZmT-Jl-TZP" customClass="GradientView" customModule="Counter" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="gmt-h8-iN3">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYi-uy-ex4" userLabel="ViewUnderLabel">
-                                <rect key="frame" x="10" y="98" width="408" height="92.666666666666686"/>
+                                <rect key="frame" x="10" y="98" width="408" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJ6-QT-13Z">
-                                        <rect key="frame" x="15" y="3" width="378" height="86.666666666666671"/>
+                                        <rect key="frame" x="15" y="3" width="378" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -150,10 +147,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVP-8c-f70" userLabel="BottomView">
-                                <rect key="frame" x="10" y="794.33333333333337" width="408" height="92.666666666666629"/>
+                                <rect key="frame" x="10" y="743" width="408" height="144"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJm-kC-oHi">
-                                        <rect key="frame" x="15" y="9.9999999999999982" width="102" height="23.333333333333329"/>
+                                        <rect key="frame" x="15" y="10" width="102" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="0"/>
                                         <connections>
@@ -162,13 +159,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата модификации" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ju-m3-eFc">
-                                        <rect key="frame" x="15" y="58.666666666666629" width="383" height="31"/>
+                                        <rect key="frame" x="15" y="93" width="383" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mz6-ED-vpL">
-                                        <rect key="frame" x="291" y="9.9999999999999982" width="102" height="23.333333333333329"/>
+                                        <rect key="frame" x="291" y="10" width="102" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="-1"/>
                                         <connections>
@@ -203,21 +200,23 @@
                         <viewLayoutGuide key="safeArea" id="dVa-5G-lsr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dYi-uy-ex4" firstAttribute="height" secondItem="gmt-h8-iN3" secondAttribute="height" multiplier="1/10" id="5Zs-Pv-eNO"/>
-                            <constraint firstItem="gmt-h8-iN3" firstAttribute="top" secondItem="ZmT-Jl-TZP" secondAttribute="top" id="6lX-4t-y5a"/>
                             <constraint firstItem="dVa-5G-lsr" firstAttribute="trailing" secondItem="dYi-uy-ex4" secondAttribute="trailing" constant="10" id="Dfh-cP-bXy"/>
                             <constraint firstItem="dVa-5G-lsr" firstAttribute="trailing" secondItem="WVP-8c-f70" secondAttribute="trailing" constant="10" id="E6A-Hv-wiF"/>
                             <constraint firstItem="dVa-5G-lsr" firstAttribute="bottom" secondItem="WVP-8c-f70" secondAttribute="bottom" constant="5" id="EDL-8K-U5Z"/>
                             <constraint firstItem="dYi-uy-ex4" firstAttribute="leading" secondItem="dVa-5G-lsr" secondAttribute="leading" constant="10" id="JM5-RK-BC8"/>
                             <constraint firstItem="Alh-VJ-VRL" firstAttribute="centerY" secondItem="dVa-5G-lsr" secondAttribute="centerY" id="PO6-V3-024"/>
-                            <constraint firstAttribute="bottom" secondItem="gmt-h8-iN3" secondAttribute="bottom" id="QFU-Jb-b4q"/>
-                            <constraint firstAttribute="trailing" secondItem="gmt-h8-iN3" secondAttribute="trailing" id="Yop-bR-4aG"/>
                             <constraint firstItem="dYi-uy-ex4" firstAttribute="top" secondItem="dVa-5G-lsr" secondAttribute="top" constant="10" id="a8L-ji-qL6"/>
                             <constraint firstItem="WVP-8c-f70" firstAttribute="leading" secondItem="dVa-5G-lsr" secondAttribute="leading" constant="10" id="jLM-5r-V77"/>
-                            <constraint firstItem="WVP-8c-f70" firstAttribute="height" secondItem="gmt-h8-iN3" secondAttribute="height" multiplier="1/10" id="mWc-KJ-e5F"/>
                             <constraint firstItem="Alh-VJ-VRL" firstAttribute="centerX" secondItem="dVa-5G-lsr" secondAttribute="centerX" id="pfd-dX-MUd"/>
-                            <constraint firstItem="gmt-h8-iN3" firstAttribute="leading" secondItem="ZmT-Jl-TZP" secondAttribute="leading" id="wFO-Fx-MVY"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.72980144769757926" green="0.95206517368825627" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.9108300091919681" green="0.78212569884592886" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="0l5-W3-rcw"/>
                     <connections>
@@ -251,7 +250,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="1920" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
