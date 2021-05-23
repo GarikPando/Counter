@@ -24,6 +24,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func addNewCounter(_ sender: UIBarButtonItem) {
         
+        let alert = UIAlertController(title: "Новый счетчик", message: nil, preferredStyle: .alert)
+        
+        let addBtn = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            if let textField = alert.textFields?.first {
+                if let text = textField.text {
+                    guard !text.isEmpty else {
+                        return
+                    }
+                    self.list.add(new: Counter(nameCounter: text, valueCounter: 0, description: "", lastModification: nil))
+                    self.counterTableView.reloadData()
+                }
+                
+            }
+        }
+        let cnlBtn = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Название счетчика"
+        }
+        alert.addAction(cnlBtn)
+        alert.addAction(addBtn)
+        
+        
+        present(alert, animated: true, completion: nil)
     }
     
     
