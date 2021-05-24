@@ -42,14 +42,25 @@ class CounterVC: UIViewController {
     
     @IBAction func incrementValue(_ sender: UIButton) {
         if var curCounter = currentCounter {
+            
             curCounter.valueCounter += 1
+ 
+            UIView.animate(withDuration: 0.5) {
+                self.valueCounter.transform = CGAffineTransform.identity.scaledBy(x: 3, y: 3)
+            } completion: { finish in
+                self.valueCounter.transform = CGAffineTransform.identity
+            }
+            
             valueCounter.setTitle(String(curCounter.valueCounter), for: .normal)
+            
             if let item = counterItem {
                 delegate?.onIncrement(counter: item)
             }
             currentCounter = curCounter
         }
     }
+    
+
     
     //MARK: - Vars
     var currentCounter: Counter?
