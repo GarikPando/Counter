@@ -19,9 +19,18 @@ class CounterVC: UIViewController {
     @IBAction func resetCounter(_ sender: UIButton) {
         if var curCounter = currentCounter {
             curCounter.valueCounter = 0
+            
+            UIView.animate(withDuration: 0.5) {
+                self.valueCounter.transform = CGAffineTransform.identity.rotated(by: -3.14)
+            } completion: { finish in
+                self.valueCounter.transform = CGAffineTransform.identity
+            }
+            
             valueCounter.setTitle("0", for: .normal)
+            
             if let item = counterItem {
                 delegate?.onReset(counter: item)
+                changeLastModification()
             }
             currentCounter = curCounter
         }
@@ -31,9 +40,16 @@ class CounterVC: UIViewController {
         if var curCounter = currentCounter {
             if curCounter.valueCounter > 0 {
                 curCounter.valueCounter -= 1
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.valueCounter.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
+                } completion: { finish in
+                    self.valueCounter.transform = CGAffineTransform.identity
+                }
                 valueCounter.setTitle(String(curCounter.valueCounter), for: .normal)
                 if let item = counterItem {
                     delegate?.onDecrement(counter: item)
+                    changeLastModification()
                 }
                 currentCounter = curCounter
             }
@@ -55,12 +71,18 @@ class CounterVC: UIViewController {
             
             if let item = counterItem {
                 delegate?.onIncrement(counter: item)
+                changeLastModification()
             }
             currentCounter = curCounter
         }
     }
     
-
+    func changeLastModification() {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+        lastModifyDateLabel.text = "Дата модификации: " + formatter.string(from: Date())
+    }
     
     //MARK: - Vars
     var currentCounter: Counter?

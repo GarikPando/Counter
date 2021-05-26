@@ -13,7 +13,6 @@ class CounterTableViewCell: UITableViewCell {
     
     @IBOutlet weak var valueCounter: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

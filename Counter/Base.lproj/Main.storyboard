@@ -34,14 +34,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CounterCell" id="0JB-7C-Jcb" customClass="CounterTableViewCell" customModule="Counter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="43"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="428" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0JB-7C-Jcb" id="KEG-nM-ks7">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0l-tW-GmJ">
-                                                    <rect key="frame" x="29.999999999999996" y="11" width="61.666666666666657" height="21"/>
+                                                    <rect key="frame" x="29.999999999999996" y="10.999999999999998" width="61.666666666666657" height="21.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="wjX-r0-3cj"/>
                                                     </constraints>
@@ -50,7 +50,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UY5-nY-Dfc">
-                                                    <rect key="frame" x="368" y="11" width="30" height="21"/>
+                                                    <rect key="frame" x="368" y="10.999999999999998" width="30" height="21.333333333333329"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="cwv-xt-9UC"/>
                                                     </constraints>
@@ -137,7 +137,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alh-VJ-VRL">
-                                <rect key="frame" x="172" y="454" width="84" height="72"/>
+                                <rect key="frame" x="172" y="414" width="84" height="72"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="50"/>
                                 <state key="normal" title="100">
                                     <color key="titleShadowColor" red="0.44194137620000001" green="0.28857207299999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -204,7 +204,7 @@
                             <constraint firstItem="dVa-5G-lsr" firstAttribute="trailing" secondItem="WVP-8c-f70" secondAttribute="trailing" constant="10" id="E6A-Hv-wiF"/>
                             <constraint firstItem="dVa-5G-lsr" firstAttribute="bottom" secondItem="WVP-8c-f70" secondAttribute="bottom" constant="5" id="EDL-8K-U5Z"/>
                             <constraint firstItem="dYi-uy-ex4" firstAttribute="leading" secondItem="dVa-5G-lsr" secondAttribute="leading" constant="10" id="JM5-RK-BC8"/>
-                            <constraint firstItem="Alh-VJ-VRL" firstAttribute="centerY" secondItem="dVa-5G-lsr" secondAttribute="centerY" id="PO6-V3-024"/>
+                            <constraint firstItem="Alh-VJ-VRL" firstAttribute="centerY" secondItem="dVa-5G-lsr" secondAttribute="centerY" constant="-40" id="PO6-V3-024"/>
                             <constraint firstItem="dYi-uy-ex4" firstAttribute="top" secondItem="dVa-5G-lsr" secondAttribute="top" constant="10" id="a8L-ji-qL6"/>
                             <constraint firstItem="WVP-8c-f70" firstAttribute="leading" secondItem="dVa-5G-lsr" secondAttribute="leading" constant="10" id="jLM-5r-V77"/>
                             <constraint firstItem="Alh-VJ-VRL" firstAttribute="centerX" secondItem="dVa-5G-lsr" secondAttribute="centerX" id="pfd-dX-MUd"/>
